@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://d34mtrloy36vh"]
 
-[ext_resource type="PackedScene" uid="uid://dt0lm6rb0xwqv" path="res://scenes/generic_plane.tscn" id="1_rrv27"]
+[ext_resource type="PackedScene" uid="uid://cnxxtw8pukrdt" path="res://scenes/plane.tscn" id="1_2pbk0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fplvi"]
 sky_top_color = Color(0.698039, 0.823529, 1, 1)
@@ -96,7 +96,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ts6kp")
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_fxeso"]
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_thght"]
 data = PackedVector3Array(-14.8693, 0, 256.202, 13.8786, 0.0182, -255.027, -13.9025, 0, -257.018, -14.8693, 0, 256.202, 13.7325, 0, 256.419, 13.8786, 0.0182, -255.027, -12.5, 0.25, 250, 12.5, 0.25, -250, 12.5, 0.25, 250, -12.5, 0.25, 250, -12.5, 0.25, -250, 12.5, 0.25, -250, 13.7325, 0, 256.419, 12.5, 0.25, -250, 13.8786, 0.0182, -255.027, 13.7325, 0, 256.419, 12.5, 0.25, 250, 12.5, 0.25, -250, -13.9025, 0, -257.018, -12.5, 0.25, 250, -14.8693, 0, 256.202, -13.9025, 0, -257.018, -12.5, 0.25, -250, -12.5, 0.25, 250, 13.8786, 0.0182, -255.027, -12.5, 0.25, -250, -13.9025, 0, -257.018, 13.8786, 0.0182, -255.027, 12.5, 0.25, -250, -12.5, 0.25, -250, -14.8693, 0, 256.202, 12.5, 0.25, 250, 13.7325, 0, 256.419, -14.8693, 0, 256.202, -12.5, 0.25, 250, 12.5, 0.25, 250)
 
 [node name="Node3D" type="Node3D"]
@@ -124,10 +124,10 @@ transform = Transform3D(0.984808, 0, 0.173648, 0, 1, 0, -0.173648, 0, 0.984808, 
 mesh = SubResource("ArrayMesh_cohtw")
 skeleton = NodePath("")
 
-[node name="StaticBody3D2" type="StaticBody3D" parent="Island/Plane"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Island/Plane"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Island/Plane/StaticBody3D2"]
-shape = SubResource("ConcavePolygonShape3D_fxeso")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Island/Plane/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_thght")
 
-[node name="GenericPlane" parent="." instance=ExtResource("1_rrv27")]
-transform = Transform3D(0.982199, 0, 0.187844, 0, 1, 0, -0.187844, 0, 0.982199, 45.66, 32.4303, 231.94)
+[node name="plane" parent="." instance=ExtResource("1_2pbk0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.6102, 0)
