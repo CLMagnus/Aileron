@@ -8,8 +8,10 @@ extends CharacterBody3D
 var rotVelocity = Vector3(0.0, 0.0, 0.0)
 var thrust = 1.0
 
+const turningSpeed = 0.1
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+var gravity = 500
 
 func _physics_process(delta):	
 	var yaw = Input.get_axis("Yaw+","Yaw-")
@@ -25,5 +27,10 @@ func _physics_process(delta):
 	#Apply gravity if not on floor
 	if not is_on_floor():
 		velocity.y -= gravity * delta
+
+	#Change rotation by pitch/yaw/roll
+	rotation.x += turningSpeed * pitch
+	rotation.y += turningSpeed * yaw
+	rotation.z += turningSpeed * roll
 
 	move_and_slide()
