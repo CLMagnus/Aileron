@@ -4,11 +4,13 @@ extends CharacterBody3D
 # Y = Yaw
 # Z = Roll
 
-#Rotational velocity
+#Rotational velocity and Actual Rotation. (Pitch, Yaw, Roll)
 var rotVelocity = Vector3(0.0, 0.0, 0.0)
-var thrust = 1.0
+var actualRotation = Vector3(0.0, 0.0, 0.0)
 
 const turningSpeed = 0.1
+
+var thrust = 1.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = 500
@@ -32,5 +34,7 @@ func _physics_process(delta):
 	rotation.x += turningSpeed * pitch
 	rotation.y += turningSpeed * yaw
 	rotation.z += turningSpeed * roll
+
+	position += rotation * thrust
 
 	move_and_slide()

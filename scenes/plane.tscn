@@ -106,7 +106,7 @@ points = PackedVector3Array(1.17407, -6.67293, 0.000230312, 1.44694, -3.51977, 0
 [node name="plane" type="Node3D"]
 
 [node name="SpringArm3D" type="SpringArm3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.932292, 0.361706, 0, -0.361706, 0.932292, 0, 3.39919, 6.20876)
+transform = Transform3D(1, 0, 0, 0, 0.932324, 0.361624, 0, -0.361624, 0.932324, 0, 3.39919, 6.20876)
 shape = SubResource("SeparationRayShape3D_cjy6p")
 spring_length = 5.503
 script = ExtResource("1_njk2w")
