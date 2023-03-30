@@ -126,3 +126,5 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
 transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_4f3gw")
+
+[node name="LocalRotation" type="Node3D" parent="CharacterBody3D"]

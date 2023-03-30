@@ -14,7 +14,7 @@ const turningSpeed = 0.1
 var thrust = 1.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = 500
+var gravity = 10
 
 func _physics_process(delta):	
 	var yaw = Input.get_axis("Yaw+","Yaw-")
@@ -25,9 +25,6 @@ func _physics_process(delta):
 	rotation.x += turningSpeed * pitch
 	rotation.y += turningSpeed * yaw
 	rotation.z += turningSpeed * roll
-
-	#Fly?
-	position += rotation * thrust
 
 	#Apply gravity if not on floor
 	if not is_on_floor():
