@@ -1,5 +1,5 @@
 # Aileron
- Aileron is a Flight Sim
+ Aileron is a Flight Sim made in Godot
 
 Current features:
 - Very bad looking plane
