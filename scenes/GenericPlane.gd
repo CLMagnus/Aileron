@@ -6,9 +6,9 @@ extends CharacterBody3D
 
 #Declare variables
 #Rotational velocity and Actual Rotation. (Pitch, Yaw, Roll)
-var rotVelocity = Vector3(0.0, 0.0, 0.0)
+var rotation_velocity = Vector3(0.0, 0.0, 0.0)
 
-const turningSpeed = 0.1
+const turning_speed = 0.01
 
 var thrust = 1.0
 
@@ -20,14 +20,17 @@ func _physics_process(delta):
 	var pitch = Input.get_axis("Pitch+","Pitch-")
 	var roll = Input.get_axis("Roll+","Roll-")
 
-	#Change rotation by pitch/yaw/roll
-	transform.basis.x.x += turningSpeed * pitch
-	transform.basis.y.x += turningSpeed * yaw
-	transform.basis.z.x += turningSpeed * roll
+	#Change rotation velocity by pitch/yaw/roll
+	rotation_velocity.x += turning_speed * pitch
+	rotation_velocity.y += turning_speed * yaw
+	rotation_velocity.z += turning_speed * roll
 
-	#Apply gravity if not on floor
-	if not is_on_floor():
-		velocity.y -= gravity * delta
+	#Apply rotation velocity
+	rotation += rotation_velocity
+
+	##Apply gravity if not on floor
+	#if not is_on_floor():
+		#velocity.y -= gravity * delta
 
 	#Move and slide
 	move_and_slide()
